@@ -1,0 +1,7 @@
+torch>=2.1
+monai>=1.4.0
+einops>=0.6
+nibabel>=5.0
+numpy>=1.23
+pyyaml>=6.0
+safetensors>=0.4

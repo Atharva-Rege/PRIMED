@@ -1,0 +1,32 @@
+dataset: ixi
+data_root: /path/to/IXI
+n_val: 100
+n_val_eval: 12
+split_seed: 42
+split_file: splits/ixi.json
+output_dir: /path/to/checkpoints/ixi_primed
+init_weights: null
+resume: true
+
+channels: [64, 128, 128, 256, 256]
+num_res_blocks: 3
+
+batch_size: 2
+grad_accum: 2
+num_workers: 8
+learning_rate: 3.0e-5
+lr_min: 1.0e-6
+lr_decay_steps: 30000
+warmup_steps: 2000
+weight_decay: 0.0
+max_steps: 30000
+ema_decay: 0.9999
+grad_clip: 1.0
+amp: true
+seed: 42
+
+eval_every: 1000
+early_stop_patience: 60
+early_stop_min_delta: 0.02
+save_every: 2000
+log_every: 200

@@ -1,0 +1,35 @@
+dataset: brats
+data_root: /path/to/ASNR-MICCAI-BraTS2023-GLI-Challenge-TrainingData
+n_val: 219
+n_val_eval: 12
+split_seed: 42
+split_file: splits/brats_gli.json
+output_dir: /path/to/checkpoints/brats_primed_avail
+init_weights: /path/to/primed_brats.safetensors
+resume: true
+
+p_missing: 0.6667
+missing_fill: mean
+
+channels: [64, 128, 128, 256, 256]
+num_res_blocks: 3
+
+batch_size: 2
+grad_accum: 2
+num_workers: 8
+learning_rate: 1.0e-5
+lr_min: 1.0e-6
+lr_decay_steps: 8000
+warmup_steps: 500
+weight_decay: 0.0
+max_steps: 8000
+ema_decay: 0.9999
+grad_clip: 1.0
+amp: true
+seed: 42
+
+eval_every: 2000
+early_stop_patience: null
+early_stop_min_delta: 0.02
+save_every: 1000
+log_every: 200
